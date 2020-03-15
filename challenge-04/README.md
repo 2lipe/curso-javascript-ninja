@@ -7,10 +7,27 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
+
 var isTruthy = function(a) {
   return !!a;
 
 };
+
+/* var isTruthy = function(a) {
+  if ( a ) {
+    return true;
+  }
+
+  return false;
+};
+*/
+
+/*
+var isTruthy = function (a) {
+  return a ? true : false;
+
+};
+*/
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0); //false
@@ -20,6 +37,7 @@ isTruthy(""); //false
 isTruthy(false); //false
 isTruthy(undefined); //false
 isTruthy(null); //false
+isTruthy(NaN); //false
 isTruthy(); //false
 isTruthy(!1); //false
 isTruthy(!true) //false
@@ -31,6 +49,9 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1); //true
 isTruthy(true); //true
+isTruthy({}); //true
+isTruthy([]); //true
+isTruthy(function() {}); //true
 isTruthy('a'); //true
 isTruthy("a"); //true
 isTruthy('0'); //true
@@ -145,6 +166,29 @@ carro.addPessoas = function(qtdPessoas) {
   }
 
   return 'Já temos ' + carro.quantidadePessoas + ' ' + ' pessoas no carro!';
+
+}
+
+/** OU */
+
+carro.adcPessoas = function(numPessoas) {
+  var totalPessoas = carro.quantidadePessoas + numPessoas;
+
+  if ( carro.quantidadePessoas === carro.assentos ) {
+    return 'O carro já está lotado';
+
+  }
+
+  if ( totalPessoas > carro.assentos ) {
+    var assentoLivre = carro.assentos - carro.quantidadePessoas;
+    var pluralSingular = assentoLivre === 1 ? ' pessoa' : ' pessoas';
+
+    return 'Só cabem mais ' + assentoLivre + pluralSingular + ' no carro!';
+  }
+
+  carro.quantidadePessoas += numPessoas;
+
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 
 }
 
