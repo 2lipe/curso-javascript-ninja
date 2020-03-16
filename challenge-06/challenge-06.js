@@ -37,29 +37,41 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 
-var teamPosition = [ 1, 2, 3, 4, 5 ];
-
 function showTeamPosition( indice ) {
+
+  if ( indice < 1 || indice > 5 ) {
+
+    return 'Não temos a informação do time que está nessa posição.';
+
+  };
+
+  return 'O time que está em ' + indice + 'º lugar é o ' + teams[ indice - 1 ] + '.';
+
+};
+
+/** OU */
+
+function showTeamPosition2( indice ) {
 
   switch ( indice ) {
     case 1:
-      console.log('O time que está em '+ teamPosition[0] + 'º lugar é o ' + teams[0] +'.');
+      console.log('O time que está em '+ indice + 'º lugar é o ' + teams[ indice - 1 ] +'.');
     break;
 
     case 2:
-      console.log('O time que está em '+ teamPosition[1] + 'º lugar é o ' + teams[1] +'.');
+      console.log('O time que está em '+ indice + 'º lugar é o ' + teams[ indice - 1  ] +'.');
     break;
 
     case 3:
-      console.log('O time que está em '+ teamPosition[2] + 'º lugar é o ' + teams[2] +'.');
+      console.log('O time que está em '+ indice + 'º lugar é o ' + teams[ indice - 1  ] +'.');
     break;
 
     case 4:
-      console.log('O time que está em '+ teamPosition[3] + 'º lugar é o ' + teams[3] +'.');
+      console.log('O time que está em '+ indice + 'º lugar é o ' + teams[ indice - 1  ] +'.');
     break;
 
     case 5:
-      console.log('O time que está em '+ teamPosition[4] + 'º lugar é o ' + teams[4] +'.');
+      console.log('O time que está em '+ indice + 'º lugar é o ' + teams[ indice - 1  ] +'.');
     break;
 
     default:
@@ -92,6 +104,13 @@ while ( count !== 31 ) {
 
 };
 
+/** OU */
+
+while ( count <= 30 ) {
+  console.log( count++ );
+
+};
+
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
     - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
@@ -111,29 +130,66 @@ function convertToHex( color ) {
 
   switch( color ) {
     case 'black':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + hex[0] + '.');
+      return ('O hexadecimal para a cor ' + color + ' é ' + hex[0] + '.');
     break;
 
     case 'blue':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + hex[1] + '.');
+      return ('O hexadecimal para a cor ' + color + ' é ' + hex[1] + '.');
     break;
 
     case 'red':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + hex[2] + '.');
+      return ('O hexadecimal para a cor ' + color + ' é ' + hex[2] + '.');
     break;
 
     case 'green':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + hex[3] + '.');
+      return ('O hexadecimal para a cor ' + color + ' é ' + hex[3] + '.');
     break;
 
     case 'white':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + hex[4] + '.');
+      return ('O hexadecimal para a cor ' + color + ' é ' + hex[4] + '.');
     break;
 
     default:
-      console.log('Não temos o equivalente hexadecimal para ' + color + '.');
+      return ('Não temos o equivalente hexadecimal para ' + color + '.');
 
   };
+
+};
+
+/** OU */
+
+function convertToHex2( color ) {
+
+  let hexa;
+
+  switch( color ) {
+
+    case 'black':
+      hexa = '#000000';
+    break;
+
+    case 'blue':
+      hexa = '#0000FF';
+    break;
+
+    case 'red':
+      hexa = '#FF0000';
+    break;
+
+    case 'green':
+      hexa = '#00FF00';
+    break;
+
+    case 'white':
+      hexa = '#FFFFFF';
+    break;
+
+    default:
+      return 'Não temos o equivalente hexadecimal para ' + color + '.';
+
+  };
+
+  return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 
 };
 
@@ -149,3 +205,14 @@ console.log( convertToHex('white') );
 console.log( convertToHex('brown') );
 console.log( convertToHex('yellow') );
 console.log( convertToHex('gray') );
+
+/***/
+
+console.log( convertToHex2('black') );
+console.log( convertToHex2('blue') );
+console.log( convertToHex2('red') );
+console.log( convertToHex2('green') );
+console.log( convertToHex2('white') );
+console.log( convertToHex2('brown') );
+console.log( convertToHex2('yellow') );
+console.log( convertToHex2('gray') );
