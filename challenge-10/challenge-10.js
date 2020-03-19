@@ -68,6 +68,15 @@
 
     }
 
+    /** OU */
+
+    // Retorna o valor booleano como true caso haja o parâmetro
+    function isOperatorValid( operator ) {
+
+      return !!operation[operator];
+
+    }
+
     /*
     Agora vamos criar a calculadora.
     - Crie uma função chamada `calculator`, que receberá como parâmetro um
@@ -88,7 +97,7 @@
       }
 
       return function( num1,num2 ) {
-        if ( typeof num1 !== 'number' || typeof num2 !== 'number' ) {
+        if ( typeof num1 !== 'number' && typeof num2 !== 'number' ) {
           return false;
         }
 
