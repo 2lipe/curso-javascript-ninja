@@ -40,10 +40,12 @@
   'The person has [COUNTER] properties'
   */
 
+  var counter = 0;
+
   for ( props in person ) {
     console.log( 'The ' + props + ' of person is ' + person[ props ] );
 
-    var counter = props.length;
+    counter++;
 
   }
 
@@ -66,6 +68,12 @@
 
   }
 
+  /** OU */
+
+  function moreThan( age ) {
+    return person.age > age;
+  }
+
   var yourAge = moreThan( 25 );
 
   console.log( 'The person has more than ' + person.age + ' years old? ' + yourAge );
@@ -77,19 +85,20 @@
   */
   console.log( 'De 0 a 10:' );
 
+  var numbers = [];
   var count = 20;
 
-  for ( var index = 0; index <= count ; index++ ) {
+  for ( var index = 0; index < count ; index++ ) {
 
-    var numbers = [ index ];
+    numbers.push( index );
 
-    if ( index > 10 ) {
+    if ( index >= 10 ) {
       break;
     }
 
-    console.log( numbers );
-
   }
+
+  console.log( numbers );
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -99,17 +108,18 @@
   */
   console.log( 'Pares de 0 a 20:' );
 
-  numbers = 0;
+  numbers = [];
 
   for ( var index = 0; index <= count; index++ ) {
+
     if ( index % 2 !== 0 ) {
       continue;
     }
 
-    var numbers = [ index ];
-
-    console.log( numbers );
+    numbers.push( index );
 
   }
+
+  console.log( numbers );
 
 }());
