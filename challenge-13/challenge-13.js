@@ -121,11 +121,16 @@
   - `estado`: que será o estado do array `brasil`.
   */
 
-  var newBrasil = brasil.map(function( item, index, array) {
+  var newBrasil = [];
 
-    return { id : index, estado : item };
+  brasil.forEach(function( item,index ) {
+    newBrasil.push({
+      id : index,
+      estado : item
+    });
 
-  });
+  })
+
 
   /*
   Mostre o array `newBrasil` no console
@@ -144,14 +149,14 @@
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
 
   var trueOrFalse = brasil.every(function(item) {
-    return item.length < 7;
+    return item.length > 7;
   });
 
-  if ( trueOrFalse ) {
-    console.log( 'Sim, todos os estados tem mais de 7 letras!' );
-  } else {
-    console.log( 'Nem todos os estados tem mais de 7 letras!' );
-  }
+  console.log(
+    trueOrFalse
+    ? 'Sim, todos os estados tem mais de 7 letras!'
+    : 'Nem todos os estados tem mais de 7 letras!'
+  );
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -168,11 +173,11 @@
 
   });
 
-  if ( hasCeara ) {
-    console.log( 'Ceará está incluído!' );
-  } else {
-    console.log( 'Ceará não foi incluído :(' );
-  }
+  console.log(
+    hasCeara
+    ? 'Ceará está incluído!'
+    : 'Ceará não foi incluído :('
+  );
 
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -183,6 +188,16 @@
 
   var map = newBrasil.map(function( item ) {
     return { id : item.id + 1, estado : item.estado + ' pertence ao Brasil.' };
+  });
+
+  /** OU */
+
+  var map = newBrasil.map(function( item ) {
+    item.id++;
+    item.estado += ' pertence ao Brasil.';
+
+    return item;
+
   });
 
   /*
