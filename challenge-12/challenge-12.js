@@ -113,6 +113,16 @@
     console.log( props + ' : ' + books[1][ props ] );
   }
 
+  /** OU */
+
+  for( var i = 0; i < books.length; i++ ) {
+    for ( var props in books[i] ) {
+
+      console.log( props + ' : ' + books[i][ props ] );
+
+    }
+  }
+
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
   seu nome. Adicione seu nome completo no array.
