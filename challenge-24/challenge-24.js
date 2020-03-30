@@ -73,7 +73,7 @@
     }
 
     function getRegexValues() {
-      return new RegExp( '\\d+[' + getOperations().join('') + ']?', 'g' );
+      return new RegExp( '\\d+[.\\d+]?[' + getOperations().join('') + ']?', 'g' );
     }
 
     function returnResult() {
@@ -97,13 +97,13 @@
     function calculateOperation( operator, firstValue, lastValue ) {
       switch( operator ) {
         case '+':
-          return Number( firstValue ) + Number( lastValue );
+          return parseFloat( firstValue ) + parseFloat( lastValue );
         case '-':
-          return Number( firstValue ) - Number( lastValue );
+          return parseFloat( firstValue ) - parseFloat( lastValue );
         case 'x':
-          return Number( firstValue ) * Number( lastValue );
+          return parseFloat( firstValue ) * parseFloat( lastValue );
         case '÷':
-          return Number( firstValue ) / Number( lastValue );
+          return parseFloat( firstValue ) / parseFloat( lastValue );
       }
     }
   /***/
