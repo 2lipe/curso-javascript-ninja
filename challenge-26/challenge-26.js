@@ -23,31 +23,35 @@
   */
   // ?
   function DOM( element ) {
-    this.element = doc.querySelectorAll( element );
+    this.element = this.getDOMElements( element );
   }
 
+  DOM.prototype.getDOMElements = function getDOMElements( element ) {
+    return document.querySelectorAll( element );
+  }
   DOM.prototype.on = function on( event, callback ) {
     Array.prototype.forEach.call( this.element, element => {
       element.addEventListener( event, callback, false );
     } );
   }
-
   DOM.prototype.off = function off( event, callback ) {
     Array.prototype.forEach.call( this.element, element => {
       element.removeEventListener( event, callback, false );
     } );
   }
-
   DOM.prototype.get = function get() {
     return this.element;
   }
 
   var $a = new DOM('[data-js="link"]');
 
-  $a.on('click', function(e) {
+  $a.on('click', handleClickOn);
+
+  function handleClickOn(e) {
     e.preventDefault();
-    console.log('clicou');
-  });
+    console.log('Evento de click ligado');
+  }
+
 
   console.log('Elementos selecionados:', $a.get());
   console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
