@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>FMG Cars</title>
+</head>
+<body>
+
+  <section class="header" >
+    <div class="container">
+      <header>
+        <div class="company-title" >
+          <h2>
+            <span data-js="company-name"></span> -
+            <span data-js="company-phone"></span>
+          </h2>
+        </div>
+      </header>
+    </div><!-- container -->
+  </section><!-- header -->
+
+  <section class="form" >
+    <div class="container">
+      <form action="/" data-js="form-register" >
+        <ul>
+          <li>
+            <label for="">Imagem do Carro:</label>
+            <input type="url" data-js="car-image">
+          </li>
+          <li>
+            <label for="">Marca / Modelo:</label>
+            <input type="text" data-js="car-brand">
+          </li>
+          <li>
+            <label for="">Ano:</label>
+            <input type="text" data-js="car-year">
+          </li>
+          <li>
+            <label for="">Placa:</label>
+            <input type="text" data-js="car-plate">
+          </li>
+          <li>
+            <label for="">Cor:</label>
+            <input type="text" data-js="car-color">
+          </li>
+          <li class="submit" >
+            <button type="submit" ><p>Cadastrar</p></button>
+          </li>
+        </ul>
+      </form>
+    </div><!-- container -->
+  </section><!-- form -->
+
+  <section class="table" >
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Imagem do Carro</th>
+            <th>Marca / Modelo</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Cor</th>
+          </tr>
+        </thead>
+        <tbody data-js="table-car" ></tbody>
+      </table>
+    </div><!-- container -->
+  </section><!-- table -->
+  <div class="clear"></div>
+
+  <section class="footer" ></section>
+    <div class="container">
+      <footer>
+
+      </footer>
+    </div><!-- container -->
+  </section><!-- footer -->
+
+  <script src="./DOMLib.js" ></script>
+  <script src="./challenge-29.js" ></script>
+</body>
+</html>
